@@ -45,6 +45,8 @@ schema = StructType([
   StructField("Timestamp", TimestampType(), False)
 ])
 
+bodyDF = eventStreamDF.select(col("body").cast("STRING"))
+
 # COMMAND ----------
 
 from pyspark.sql.functions import col, from_json, from_unixtime
