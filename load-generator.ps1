@@ -34,7 +34,6 @@ while ($true)
     $headers = @{
                 "Authorization"="SharedAccessSignature sr=" + $encodedURI + "&sig=" + $signature + "&se=" + $expiry + "&skn=" + $keyname;
                 "Content-Type"="application/atom+xml;type=entry;charset=utf-8"; # must be this
-                "Content-Length" = ("{0}" -f ($body.Length))
                 }
 
     $method = "POST"
